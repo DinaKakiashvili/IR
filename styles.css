@@ -39,7 +39,6 @@
   margin-right:10px;
 }
 
-
 .rectangle:hover {
   transform: scale(1.1);
   opacity:0.8;
@@ -93,130 +92,28 @@
 
 .movingPage:hover{
   color:rgb(0, 255, 217);
-  font-size: 3em;  
+  font-size: 2em;  
 }
 
 .movingPage:hover .names {
   opacity: 1;
 }
 
-.container {
+
+body {
+  font-family: 'Sacramento', cursive;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   display: flex;
-  width: 100%; /* Ensure the container uses full width */
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  align-items:center;
-  justify-content: center;
-}
-
-.left-column, .right-column {
-  flex: 1;
-}
-
-.left-column {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.pic-column{
-  padding: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.profile-image {
-  width: 420px;
-  max-width: 500px; 
-  border-radius: 8px;
-  
-}
-
-.left-column h1 {
-  font-family: 'Oleo Script', cursive;
-
-}
-
-.left-column p {
-  font-size: 16px;
-  width:200px;
-}
-
-.arrow {
-  font-size: 24px;
-}
-
-.right-column {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-.card {
-  background-color: #f5f5f5;
-  padding: 15px; /* Adjust padding to make cards shorter */
-  border-radius: 8px;
-  text-align: left;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width:300px;
-  height:300px;
-}
-
-.contact-card {
-  background-color: #d1e7e1;
-}
-
-.card h2 {
-  font-family: 'Oleo Script', cursive;
-  margin-top: 0;
-}
-
-.card p {
-  font-size: 14px;
-  margin: 10px 0 20px;
-  font-family: 'Libre Baskerville', serif;
-}
-
-.card a{
-  font-size: 14px;
-  margin: 10px 0 20px;
-  font-family: 'Libre Baskerville', serif;
-  text-decoration: none;
-  color: black;
-  transition: font-size 0.5s ease ,opacity 0.5s ease;
-}
-
-.card a:hover{
-  font-size: large;
-  opacity: 0.5;
-}
-
-.card li{
-  margin: 20px 0;
-}
-
-.view-more {
-  text-decoration: none;
-  font-weight: bold;
-  color: black;
-  border-bottom: 1px solid black;
-}
-
-.view-more:hover {
-  color: gray;
-  border-bottom: 1px solid gray;
+  height: 100vh;
 }
 
 .sidebar {
   width: 200px;
   background-color: #333;
   color: white;
-  height: 100vh; /* Full height */
+  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
@@ -229,10 +126,13 @@
 .sidebar nav ul {
   list-style-type: none;
   padding: 0;
+  width: 100%;
 }
 
 .sidebar nav ul li {
   margin: 20px 0;
+  width: 100%;
+  text-align: center;
 }
 
 .sidebar nav ul li a {
@@ -240,8 +140,134 @@
   text-decoration: none;
   font-size: 18px;
   font-family: 'Oleo Script', cursive;
+  display: block;
+  padding: 10px 20px;
+  transition: background 0.3s, color 0.3s;
 }
 
 .sidebar nav ul li a:hover {
-  text-decoration: underline;
+  background-color: #444;
+  color: #ecf0f1;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-rows: auto;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-left: 220px; 
+  height: 100vh; 
+  align-items: center; 
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center horizontally */
+  grid-column: 1 / 2;
+  text-align: center; /* Center text */
+}
+
+.pic-column {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 2 / 3;
+}
+
+.profile-image {
+  width: 250px;
+  height: auto;
+  max-width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.left-column h1 {
+  font-family: 'Oleo Script', cursive;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.left-column p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.arrow {
+  font-size: 24px;
+}
+
+.right-column {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  grid-column: 3 / 4;
+}
+
+.card {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  width:200px;
+  height:200px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.contact-card {
+  background-color: #d1e7e1;
+}
+
+.card h2 {
+  font-family: 'Oleo Script', cursive;
+  margin-top: 0;
+  font-size: 15px;
+}
+
+.card p, .card ul, .card a {
+  font-size: 10px;
+  font-family: 'Libre Baskerville', serif;
+}
+
+.card ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.card a {
+  text-decoration: none;
+  color: black;
+  transition: font-size 0.3s ease, opacity 0.3s ease;
+}
+
+.card a:hover {
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+.card li {
+  margin: 10px 0;
+}
+
+.view-more {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  border-bottom: 1px solid black;
+}
+
+.view-more:hover {
+  color: gray;
+  border-bottom: 1px solid gray;
 }
