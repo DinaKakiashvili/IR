@@ -15,11 +15,26 @@
   padding: 0;   
 }
 
+
+.background-div2 {
+  width: 100vw;
+  background-image: url('images/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Keeps the background fixed while scrolling */
+  color: black;
+  font-family: 'DM Serif Display', serif;
+  padding: 0;
+  overflow-y: auto; /* Enable vertical scrolling */
+  text-align: center;
+}
+
 .dinaAndNatalie {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 40vw;  /* Width set to 80% of the viewport width */
+  width: 60vw;  /* Width set to 80% of the viewport width */
   margin: 20px 0; /* Margin for spacing */
 }
 
@@ -79,6 +94,11 @@
   background-position: center;
 }
 
+.rectangle.project{
+  background-image: url('images/project.PNG');
+  background-size: cover;  
+  background-position: center;
+}
 .movingPage{
   color: white;
   text-decoration: none;
@@ -110,23 +130,34 @@ body {
 }
 
 .sidebar {
-  width: 200px;
+  width: 50px; /* Initial width to show a small part or handle */
   background-color: #333;
   color: white;
   height: 100vh;
   position: fixed;
   top: 0;
-  left: 0;
+  left: 0; /* Align the sidebar to the left */
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
+  transition: width 0.3s ease; /* Smooth transition when hovering */
+  overflow: hidden; /* Hide the content that overflows */
+}
+
+.sidebar:hover {
+  width: 200px; /* Expand the sidebar to full width on hover */
 }
 
 .sidebar nav ul {
   list-style-type: none;
   padding: 0;
   width: 100%;
+  display: none; /* Hide the list initially */
+}
+
+.sidebar:hover nav ul {
+  display: block; /* Show the list when hovering over the sidebar */
 }
 
 .sidebar nav ul li {
@@ -149,6 +180,8 @@ body {
   background-color: #444;
   color: #ecf0f1;
 }
+
+
 
 .container {
   display: grid;
@@ -271,3 +304,25 @@ body {
   color: gray;
   border-bottom: 1px solid gray;
 }
+
+.gallery {
+  display: block; /* Ensure each image is treated as a block element */
+  width: 100%; /* Make sure the gallery takes the full width */
+  padding: 10px; /* Optional padding for the gallery */
+}
+
+.gallery img {
+  display: block; /* Make sure each image is on its own line */
+  margin: 20px auto; /* Center the images horizontally */
+  width: auto; /* Maintain the natural width of the image */
+  max-width: 90%; /* Ensure images don't exceed the viewport width */
+  height: auto; /* Maintain the aspect ratio */
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
