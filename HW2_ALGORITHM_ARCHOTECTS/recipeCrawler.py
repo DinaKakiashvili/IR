@@ -111,7 +111,7 @@ def save_recipes_to_excel(recipes, filename='recipes.xlsx'):
 def main():
     url = 'https://www.recipetineats.com/category/quick-and-easy/'
     ingreds = ['1 onion', '2 tbsp olive oil']
-    recipes_for_query = find_recipes_by_ingredients(url, ingreds, max_recipes=20, max_pages=5)
+    recipes_for_query = find_recipes_by_ingredients(url, ingreds, max_recipes=20, max_pages=20)
 
     #if recipes with these ingrediens were found, save the data to the excel
     if recipes_for_query:
