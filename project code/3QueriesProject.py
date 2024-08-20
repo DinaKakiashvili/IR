@@ -139,14 +139,14 @@ def main():
     # Save recipes published in 2024 to Excel (only url and date_published)
     if recipes_from_24:
         save_recipes_to_excel(recipes_from_24, 'recipes_2024.xlsx', columns=['url', 'date_published'])
-        print(f'Found {len(recipes_from_24)} recipes published in 2024. Check out top_10_recipes_2024.xlsx')
+        print(f'Found {len(recipes_from_24)} recipes published in 2024. Check out recipes_2024.xlsx')
     else:
         print('No recipes found published in 2024.')
 
     # Save 5-star recipes to Excel (only url and rating)
     if recipes_rated_5:
         save_recipes_to_excel(recipes_rated_5, 'five_star_recipes.xlsx', columns=['url', 'rating'])
-        print(f'Found {len(recipes_rated_5)} 5-star recipes. Check out top_10_five_star_recipes.xlsx')
+        print(f'Found {len(recipes_rated_5)} 5-star recipes. Check out five_star_recipes.xlsx')
     else:
         print('No 5-star recipes found.')
 
